@@ -403,6 +403,7 @@ class usercontrol extends base {
     function onprofile() {
         $navtitle = '个人资料';
         if (isset($this->post['submit'])) {
+            $username = $this->post['username'];
             $gender = $this->post['gender'];
             $bday = $this->post['birthyear'] . '-' . $this->post['birthmonth'] . '-' . $this->post['birthday'];
             $phone = $this->post['phone'];
@@ -410,12 +411,13 @@ class usercontrol extends base {
             $msn = $this->post['msn'];
             $messagenotify = isset($this->post['messagenotify']) ? 1 : 0;
             $mailnotify = isset($this->post['mailnotify']) ? 2 : 0;
-            $isnotify = $messagenotify + $mailnotify;
+            $appnotify = isset($this->post['appnotify']) ? 4 : 0;
+            $isnotify = $messagenotify + $mailnotify+$appnotify;
             $signature = $this->post['signature'];
             if (($this->post['email'] != $this->user['email']) && (!preg_match("/^[a-z'0-9]+([._-][a-z'0-9]+)*@([a-z0-9]+([._-][a-z0-9]+))+$/", $this->post['email']) || $this->db->fetch_total('user', " email='" . $this->post['email'] . "' "))) {
                 $this->message("邮件格式不正确或已被占用!", 'user/profile');
             }
-            $_ENV['user']->update($this->user['uid'], $gender, $bday, $phone, $qq, $msn, $signature, $isnotify);
+            $_ENV['user']->update($this->user['uid'],$username, $gender, $bday, $phone, $qq, $msn, $signature, $isnotify);
             isset($this->post['email']) && $_ENV['user']->update_email($this->post['email'], $this->user['uid']);
             $this->message("个人资料更新成功", 'user/profile');
         }

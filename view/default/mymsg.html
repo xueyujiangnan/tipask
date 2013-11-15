@@ -3,7 +3,10 @@
 <script type="text/javascript" src="{SITE_URL}js/imgpopup.js"></script>
 <div class="content">
     <div class="uleft">
-        <div class="tximg"><img width="100px" height="100px" src="{$user['avatar']}" alt="{$user['username']}" title="{$user['username']}"></div>
+        <div class="tximg">
+        <img width="100px" height="100px" src="{$user['avatar']}" alt="{$user['username']}" title="{$user['username']}">
+        <div class="editimg_cy"><a style="color:#eee;" href="{url user/editimg}">修改头像</a></div>
+        </div>
         <div class="txname">
             {$user['username']}
             <!--{if $user['islogin']}-->

@@ -1,7 +1,10 @@
 {template header}
 <div class="content">
     <div class="uleft">
-        <div class="tximg"><img width="100px" height="100px" src="{$user['avatar']}" alt="{$user['username']}" title="{$user['username']}"></div>
+        <div class="tximg">
+        <img width="100px" height="100px" src="{$user['avatar']}" alt="{$user['username']}" title="{$user['username']}">
+        <div class="editimg_cy"><a style="color:#eee;" href="{url user/editimg}">修改头像</a></div>
+        </div>
         <div class="txname">
             {$user['username']}
             <!--{if $user['islogin']}-->
@@ -24,9 +27,9 @@
                 <li class="on">
                     <a href="{url user/profile}">个人资料</a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="{url user/uppass}">修改密码</a>
-                </li>
+                </li> -->
                 <li>
                     <a href="{url user/editimg}">修改头像</a>
                 </li>
@@ -35,7 +38,7 @@
         </div>
         <div class="grxx">
             <form name="upinfoForm"  action="{url user/profile}" method="post">
-                <div class="listx"><h3>用户名</h3>{$user['username']}</div>
+                <div class="listx"><h3>用户名</h3><input type="text" class="input3" value="{$user['username']}" size="62" id="username" name="username"></div>
                 <div class="clr"></div>
                 <div class="listx"><h3>性别</h3>
                     <input type="radio" value="1" name="gender" {if (1 == $user['gender'])} checked {/if} />男 
@@ -72,14 +75,14 @@
                 <div class="listx"><h3>联系电话</h3>
                     <input type="text" class="input3" size="62" name="phone" value="{$user['phone']}" />
                 </div>
-                <div class="clr"></div>
+                <!-- <div class="clr"></div>
                 <div class="listx"><h3>QQ</h3>
                     <input type="text" class="input3" size="20"  name="qq" value="{$user['qq']}"/>
-                </div>
+                </div> 
                 <div class="clr"></div>
                 <div class="listx"><h3>MSN帐号</h3>
                     <input type="text" class="input3"  size="20" name="msn" value="{$user['msn']}" />
-                </div>
+                </div>-->
                 <div class="clr"></div>
                 <!--
                 <div class="listx"><h3>隐私设定</h3>
@@ -95,6 +98,7 @@
                     <div class="jutix">
                         <input type="checkbox" {if 1 & $user['isnotify']}checked{/if} value="1" name="messagenotify" />&nbsp;站内消息&nbsp;
                                <input type="checkbox" {if 2 & $user['isnotify']}checked{/if} value="2" name="mailnotify" />邮件通知
+                               <input type="checkbox" {if 2 & $user['isnotify']}checked{/if} value="4" name="appnotify" />客户端提醒
                     </div>
                 </div>
                 <div class="clr"></div>

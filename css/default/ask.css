@@ -721,6 +721,9 @@ em{font-style: normal;color: #888888;font-size: 11px;margin: auto 0 auto 4px;}
 .dlc{padding-top:20px; padding-bottom:5px;}
 
 
+/*自定义的css*/
+.editimg_cy{background-color:#666;width: 98px;height: 23px;margin-top: -30px ;margin-left:2px;position: absolute;font-size: 17px;font-weight: bolder;font-family: '微软雅黑';text-align: center;border-radius: 4px;-webkit-border-radius: 4px;-moz-border-radius: 4px;padding-top: 7px;}
+
 
 
 

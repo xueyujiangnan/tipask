@@ -1,0 +1,9 @@
+
+开发环境参数：
+
+APPID=5730
+
+wsdl=http://58.22.60.28:8080/AppCenter/services/AppCenterWS?wsdl
+
+测试帐号自己注册，以下注册地址
+http://58.22.60.26:808/registration.html
