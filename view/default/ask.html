@@ -151,10 +151,6 @@
                		<!--{loop $questionlist $question}-->
                		<li> <a title="$question'title']}" target="_blank" href="{url question/view/$question['id']}">{eval echo cutstr($question['title'],24);}</a></li>
                		<!--{/loop}-->
-                    <!--{eval $nosolvelist=$this->fromcache('nosolvelist');}-->
-                    <!--{loop $nosolvelist $index $nosolve}-->
-                    <li> <a title="{$nosolve['title']}" target="_blank" href="{url question/view/$nosolve['id']}">{eval echo cutstr($nosolve['title'],24);}</a></li>
-                    <!--{/loop}-->
                 </ul>
             </div>
             <div class="ggbuttom">
