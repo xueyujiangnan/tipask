@@ -17,7 +17,8 @@
             'fileDesc'  : 'User Avatar(.JPG, .GIF, .PNG,.JPEG)',
             'onComplete':function(event, ID, fileObj, response, data) {
                 if('ok' == response){
-                    alert('头像上传成功，请刷新页面查看更新!');
+                   // alert('头像上传成功，请刷新页面查看更新!');
+                    location.reload();
                 }else{
                     alert("上传头像失败，请确认图片类型是否正确!");
                     $('#file_upload').uploadifyCancel(ID);

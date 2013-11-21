@@ -11,9 +11,10 @@ body{font-size: 12px;color: #888;overflow: hidden;}
     cursor: pointer;
     line-height: 30px;
     border: 1px solid #ccc;
-    background:url("../../themes/default/images/dialog-title-bg.png") repeat-x;
+	background-color:#CCCCFF;
+    /*  background:url("../../themes/default/images/dialog-title-bg.png") repeat-x;*/
 }
-#tabHeads span.focus{ border-bottom: none; height: 31px;background-color: #fff;}
+#tabHeads span.focus{ border-bottom: none; height: 31px;background-color: #08c;color:#fff;}
 #tabBodys{ border: 1px solid #ccc; width:620px;height:325px;_height:328px;margin: 0 auto;position: relative;top:-1px;}
 .panel { position: absolute; width: 620px;height:325px;background: #fff;}
 #remote{ z-index: 200;}

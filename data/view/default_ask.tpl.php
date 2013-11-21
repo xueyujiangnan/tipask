@@ -31,16 +31,6 @@
                         <script type="text/plain" id="mydescription" name="description" style="width:550px;margin-left:75px;"></script>
                     </div>
                     <div class="clr"></div>
-
-                    <div class="shur1">
-                        <h2>标签(TAG):</h2>  
-                        <input type="text"  maxlength="8" name="qtags[]" class="input4" value="" />
-                        <input type="text"  maxlength="8" name="qtags[]" class="input4" value="" />                   
-                        <input type="text"  maxlength="8" name="qtags[]" class="input4" value="" />                  
-                        <input type="text"  maxlength="8" name="qtags[]" class="input4" value="" />                   
-                        <input type="text"  maxlength="8" name="qtags[]" class="input4" value="" />                   
-                    </div>
-                    <div class="clr"></div>
                     <div class="shur shur3">
                         <h2>问题分类</h2>
                         <div id="classnav" name="classnav">
@@ -48,7 +38,7 @@
                                 <tr valign="top">
                                     <td width="15%">
 
-                                        <select  id="ClassLevel1" class="catselect2" size="8" name="classlevel1" >
+                                        <select  id="ClassLevel1" class="catselect2" size="8" name="classlevel1" style=" font: 16px/18px '宋体',Arial; ">
                                             <option selected></option>
                                         </select>
 
@@ -78,7 +68,29 @@
                         </div>
                     </div>
                     <div class="clr"></div>
-
+                      <div class="shur shur2">
+                        <div class="shezhi">
+                            <? if($setting['code_ask']) { ?>                            <h3>验证码:</h3><input type="text"  maxlength="8" name="code"    class="input4"  />&nbsp;<img  id="verifycode" align="absmiddle"   src="<?=SITE_URL?>?user/code.html" />&nbsp;<a href="javascript:updatecode();">换一张</a>
+                            <div class="clr"></div> 
+                            <? } ?>                            <input type="hidden" value="0" name="cid" />
+                            <input type="hidden" value="<?=$askfromuid?>" name="askfromuid" />                            
+                        </div>
+                    </div>
+                    <div class="clr"></div>
+                    <div class="shur1"><a href="javaScript:showOrhide();" style="font-size: 14px;">高级&nbsp;>></a>
+</div>
+ 
+<!-- 高级部分开始-->
+<div id="senior" style="display:none;">
+<div class="shur1">
+                        <h2>标签(TAG):</h2>  
+                        <input type="text"  maxlength="8" name="qtags[]" class="input4" value="" />
+                        <input type="text"  maxlength="8" name="qtags[]" class="input4" value="" />                   
+                        <input type="text"  maxlength="8" name="qtags[]" class="input4" value="" />                  
+                        <input type="text"  maxlength="8" name="qtags[]" class="input4" value="" />                   
+                        <input type="text"  maxlength="8" name="qtags[]" class="input4" value="" />                   
+                    </div>
+                    <div class="clr"></div>
                     <div class="shur shur2">
                         <h2>问题设置</h2>
                         <div class="shezhi">
@@ -98,12 +110,13 @@
                             <div class="clr"></div> 
                             <? if($user['uid']) { ?>                            <h3>匿名设定:</h3><input type="checkbox" name="hidanswer" value="1" class="checkbox1" />&nbsp;<span class="zhusi">您需要付出财富值10分</span>
                             <div class="clr"></div>
-                            <? } ?>                            <? if($setting['code_ask']) { ?>                            <h3>验证码:</h3><input type="text"  maxlength="8" name="code"    class="input4"  />&nbsp;<img  id="verifycode" align="absmiddle"   src="<?=SITE_URL?>?user/code.html" />&nbsp;<a href="javascript:updatecode();">换一张</a>
-                            <div class="clr"></div> 
                             <? } ?>                            <input type="hidden" value="0" name="cid" />
                             <input type="hidden" value="<?=$askfromuid?>" name="askfromuid" />                            
                         </div>
                     </div>
+                    </div>
+                    <!-- 高级部分结束 -->
+                    
                     <div id="searchresult"></div>
                     <div class="asksubmit"><button name="submit" type="submit" class="btn_addques" ></button></div>
                     <div class="clr"></div>
@@ -122,7 +135,7 @@
                     <li class="gga2">
                         <div class="juzhong">
                             <div class="qico" ><div class="irelate"></div></div>
-                            别人都在问什么
+                            我问过的
                         </div>
                     </li>
                     <li class="gga3"></li>
@@ -131,6 +144,11 @@
             <div class="clr"></div>
             <div class="ggcon">
                 <ul>
+               
+<? if(is_array($questionlist)) { foreach($questionlist as $question) { ?>
+               		<li> <a title="<?=$question?>'title']}" target="_blank" href="<?=SITE_URL?>?q-<?=$question['id']?>.html"><? echo cutstr($question['title'],24); ?></a></li>
+               		
+<? } } ?>
                     <? $nosolvelist=$this->fromcache('nosolvelist'); ?>                    
 <? if(is_array($nosolvelist)) { foreach($nosolvelist as $index => $nosolve) { ?>
                     <li> <a title="<?=$nosolve['title']?>" target="_blank" href="<?=SITE_URL?>?q-<?=$nosolve['id']?>.html"><? echo cutstr($nosolve['title'],24); ?></a></li>
@@ -181,6 +199,9 @@
 <div class="clr"></div>
 <script type="text/javascript">
     $(document).ready(function () {
+    	
+    	//将光标聚集到问题标题
+    	$("#mytitle").focus();
         var mycontent = new baidu.editor.ui.Editor(editor_options);
         mycontent.render("mydescription");
         $("#mytitle").bind("blur", function(){

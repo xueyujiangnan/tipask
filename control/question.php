@@ -99,6 +99,7 @@ class questioncontrol extends base {
             $category_js = $_ENV['category']->get_js();
             @$word = $this->post['word'];
             $askfromuid = intval($this->get['2']);
+            $questionlist = $_ENV['question']->list_by_uid($this->user['uid'], $status, 0, 30);
             if ($askfromuid)
                 $touser = $_ENV['user']->get_by_uid($askfromuid);
             include template('ask');

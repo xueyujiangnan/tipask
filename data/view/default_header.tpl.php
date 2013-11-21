@@ -20,7 +20,7 @@
             <script src="<?=SITE_URL?>js/common.js" type="text/javascript"></script>
             <?=$setting['seo_headers']?>
     </head>
-    <body >
+    <body>
         <div class="top">
             <div class="topnav" id="toptab">
                 <div class="topleft">
@@ -30,29 +30,8 @@
             </div>
         </div>
         <div class="header">
-            <div class="h_top">
-                <div class="logo" >
-                    <a href="<?=SITE_URL?>" title="<?=$setting['site_name']?>" target="_top"><img src="<?=SITE_URL?>css/default/logo.png" alt="<?=$setting['site_name']?>" /></a>
-                </div>
-                <div class="userbar">
-                    <? if(0!=$user['uid'] && $user['avatar']) { ?>                    <div class='gdfw'>
-                        <img src="<?=$user['avatar']?>" />
-                    </div>
-                    <? } ?>                    <div class='hyn'>
-                        <p>
-                            <? if(0!=$user['uid']) { ?>                            您好,<a href="<?=SITE_URL?>?user/default.html"><b><?=$user['username']?></b></a>
-                            <? if($user['newmsg']>0) { ?>                            <span class="separe">&nbsp;|&nbsp;</span><a id="TopLink_MessageBox" href="<?=SITE_URL?>?message/new.html" >消息(<span id="MessagesCount" style="color: rgb(255, 0, 0);font-weight:bold ;"><?=$user['newmsg']?></span>)</a>
-                            <? } ?>                            <span class="separe">&nbsp;|&nbsp;</span><a href="<?=SITE_URL?>?user/default.html">个人中心</a>
-                            <? if($user['groupid']<=3) { ?>                            <span class="separe">&nbsp;|&nbsp;</span><a href="<?=SITE_URL?>index.php?admin_main">系统设置</a>
-                            <? } ?> 
-                            <span class="separe">&nbsp;|&nbsp;</span><a href="<?=SITE_URL?>?user/logout.html">退出</a> 
-                            <? } else { ?>                            您好，欢迎来<?=$setting['site_name']?>！[<a  href="<?=SITE_URL?>?user/login.html">请登录</a>] [<a  href="<?=SITE_URL?>?user/register.html">免费注册</a>]
-                            <? } ?></p>
-                        <? if(0!=$user['uid']) { ?><p>提问:<?=$user['questions']?> | 回答:<?=$user['answers']?>&nbsp;|&nbsp;用户组:<?=$user['grouptitle']?></p><? } else { if($setting['qqlogin_open'] && $setting['qqlogin_open']) { ?><a href="#" onclick='toQzoneLogin()' title="QQ账号登陆" class="s4"><img src="<?=SITE_URL?>css/default/Connect_logo_3.png"></a><? } } ?>                    </div>
-
-                </div>
-                <div class="clr"></div>
-            </div>
+        
+<? include template('headertop'); ?>
             <div class="h_mid">
                 <div class="h_mid_l"> </div>
                 <div id="tdh" class="h_mid_m">

@@ -1095,4 +1095,68 @@ function get_remote_image($url, $savepath) {
     return $savepath;
 }
 
+/**
+ * 自定义的全局函数
+ */
+
+function login($username,$pwd){
+	$username="1007577820@qq.com";
+	$pwd = implode(array_reverse((str_split(base64_encode($pwd),1))));
+// 	$pwd = implode(array_reverse((str_split(base64_encode("lengxueyu"),1))));
+	$xml = '<request type="login" subtype="accountLogin" msid="">
+		<message>
+		  <user account="'.$username.'"  pwd="'.$pwd.'" />
+		</message>
+		</request>
+		';
+	$result = getWSDLResult($xml);
+	if($result["message"]){
+// 		var_dump($result["message"]["user"]["@attributes"]);
+		return $result["message"]["user"]["@attributes"];
+	}else{
+		return null;
+	}
+}
+function isLogin($uid,$token){
+	$xml = '<request type="user" subtype="getStatus" msid="">
+		<token>'.$token.'</token>
+		<message>
+		  <user acc_nbr="'.$uid.'" />
+		</message>
+		</request>
+		';
+	return getWSDLResult($xml);
+}
+function notify(){
+	$xml = '<request type="im" subtype="notify" msid="">
+			<token> ee99d537-2d39-47ea-b250-df713fe3846a </token>
+			<message sync="1" >
+			<im>
+				 <title>窗口标题</title>
+				 <subject>消息主题</subject>			
+				 <content>提醒内容</content>
+				 <receiver>66660011,66660022</receiver>
+				 <url><![CDATA[http://www.ip.cn]]></url>
+				</im>
+				</message>
+			</request>';
+	return getWSDLResult($xml);
+	
+}
+function giftCardFill(){
+	$xml = '<request type=" fillbusiness " subtype=" giftCardFill " msid="">
+			<token> ee99d537-2d39-47ea-b250-df713fe3846a </token>
+			<message> 
+			<info gift_cardid="礼品卡号" gift_cardpwd="md5(礼品卡的密码)" gift_cardtype="礼品卡类型" filltype="1"/>
+			</message>
+			</request>';
+	return getWSDLResult($xml);
+}
+function getWSDLResult($xml){
+	$wsdl = "http://58.22.60.28:8080/AppCenter/services/AppCenterWS?wsdl";
+	$soap = new SoapClient($wsdl);
+	$result = $soap->request(array('appid'=>'5730','xmlBuf'=>$xml));
+	return json_decode(json_encode(simplexml_load_string($result->return)), true);
+}
+
 ?>

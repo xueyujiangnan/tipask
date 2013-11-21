@@ -1,7 +1,10 @@
 <? if(!defined('IN_TIPASK')) exit('Access Denied'); include template('header'); ?>
 <div class="content">
     <div class="uleft">
-        <div class="tximg"><img width="100px" height="100px" src="<?=$user['avatar']?>" alt="<?=$user['username']?>" title="<?=$user['username']?>"></div>
+        <div class="tximg">
+        <img width="100px" height="100px" src="<?=$user['avatar']?>" alt="<?=$user['username']?>" title="<?=$user['username']?>">
+        <div class="editimg_cy"><a style="color:#eee;" href="<?=SITE_URL?>?user/editimg.html">修改头像</a></div>
+        </div>
         <div class="txname">
             <?=$user['username']?>
             <? if($user['islogin']) { ?>            <img src="<?=SITE_URL?>css/default/online.gif" align="absmiddle" title="当前在线" alt="当前在线"/>

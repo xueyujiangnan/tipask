@@ -156,3 +156,6 @@ function toQzoneLogin(){
     window.location=g_site_url+"index.php?user/qqlogin";
 } 
 
+function showOrhide(){
+	$("#senior").toggle();
+}
