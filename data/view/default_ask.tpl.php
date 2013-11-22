@@ -149,11 +149,6 @@
                		<li> <a title="<?=$question?>'title']}" target="_blank" href="<?=SITE_URL?>?q-<?=$question['id']?>.html"><? echo cutstr($question['title'],24); ?></a></li>
                		
 <? } } ?>
-                    <? $nosolvelist=$this->fromcache('nosolvelist'); ?>                    
-<? if(is_array($nosolvelist)) { foreach($nosolvelist as $index => $nosolve) { ?>
-                    <li> <a title="<?=$nosolve['title']?>" target="_blank" href="<?=SITE_URL?>?q-<?=$nosolve['id']?>.html"><? echo cutstr($nosolve['title'],24); ?></a></li>
-                    
-<? } } ?>
                 </ul>
             </div>
             <div class="ggbuttom">

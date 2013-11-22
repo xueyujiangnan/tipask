@@ -18,13 +18,13 @@ return array (
     'endtime' => '1390222420',
     'hidden' => '0',
     'answers' => '0',
-    'views' => '1',
+    'views' => '2',
     'goods' => '0',
     'status' => '1',
     'ip' => '127.0.0.1',
     'search_words' => '',
     'category_name' => NULL,
-    'format_time' => '12分钟前',
+    'format_time' => '19小时前',
   ),
   1 => 
   array (
@@ -50,7 +50,7 @@ return array (
     'ip' => '127.0.0.1',
     'search_words' => '',
     'category_name' => NULL,
-    'format_time' => '13分钟前',
+    'format_time' => '19小时前',
   ),
 );
 ?>
