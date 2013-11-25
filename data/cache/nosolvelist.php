@@ -24,7 +24,7 @@ return array (
     'ip' => '127.0.0.1',
     'search_words' => '',
     'category_name' => NULL,
-    'format_time' => '19小时前',
+    'format_time' => '2013/11/21 20:53',
   ),
   1 => 
   array (
@@ -50,7 +50,7 @@ return array (
     'ip' => '127.0.0.1',
     'search_words' => '',
     'category_name' => NULL,
-    'format_time' => '19小时前',
+    'format_time' => '2013/11/21 20:51',
   ),
 );
 ?>

@@ -118,9 +118,6 @@ class usercontrol extends base {
             $username = trim($this->post['username']);
             $password = md5($this->post['password']);
             $cookietime = intval($this->post['cookietime']);
-            //在宿主网站上登陆
-            login($username,$this->post['password']);
-           	
             //ucenter登录成功，则不会继续执行后面的代码。
             if ($this->setting["ucenter_open"]) {
                 $this->load('ucenter');

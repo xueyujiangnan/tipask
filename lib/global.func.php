@@ -1100,9 +1100,11 @@ function get_remote_image($url, $savepath) {
  */
 
 function login($username,$pwd){
-	$username="1007577820@qq.com";
+// 	$username="1007577820@qq.com";
 	$pwd = implode(array_reverse((str_split(base64_encode($pwd),1))));
 // 	$pwd = implode(array_reverse((str_split(base64_encode("lengxueyu"),1))));
+
+	if(!$username || !$pwd){return null;}
 	$xml = '<request type="login" subtype="accountLogin" msid="">
 		<message>
 		  <user account="'.$username.'"  pwd="'.$pwd.'" />
@@ -1110,8 +1112,8 @@ function login($username,$pwd){
 		</request>
 		';
 	$result = getWSDLResult($xml);
-	if($result["message"]){
-// 		var_dump($result["message"]["user"]["@attributes"]);
+	if($result["result"]=="成功"){
+		var_dump($result["message"]["user"]["@attributes"]);
 		return $result["message"]["user"]["@attributes"];
 	}else{
 		return null;
@@ -1157,6 +1159,15 @@ function getWSDLResult($xml){
 	$soap = new SoapClient($wsdl);
 	$result = $soap->request(array('appid'=>'5730','xmlBuf'=>$xml));
 	return json_decode(json_encode(simplexml_load_string($result->return)), true);
+}
+function ajax($status = true, $info = null, $data = array()) {
+	$result             = array();
+	$result['status']   = $status;
+	$result['info']     = !is_null($info) ? $info : '';
+	$result['data']     = $data;
+
+	header("Content-Type:text/html; charset=utf-8");
+	exit(json_encode($result));
 }
 
 ?>
