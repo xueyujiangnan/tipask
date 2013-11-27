@@ -20,7 +20,7 @@ return array (
     'groupid' => '1',
     'username' => 'admin',
     'gender' => '女',
-    'lastlogin' => '4秒前',
+    'lastlogin' => '16秒前',
     'avatar' => 'http://localhost/tipask/data/avatar/000/00/00/small_000000001.jpg',
     'credit1' => '15',
     'questions' => '1',

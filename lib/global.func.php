@@ -1113,7 +1113,6 @@ function login($username,$pwd){
 		';
 	$result = getWSDLResult($xml);
 	if($result["result"]=="成功"){
-		var_dump($result["message"]["user"]["@attributes"]);
 		return $result["message"]["user"]["@attributes"];
 	}else{
 		return null;
