@@ -569,7 +569,7 @@ em{font-style: normal;color: #888888;font-size: 11px;margin: auto 0 auto 4px;}
 /*userinfo*/
 .uleft{ float:left; width:161px;border-top:1px solid #60A4F1; border-bottom:1px solid #60A4F1; border-left:1px solid #60A4F1; height:760px; }
 .uleft .tximg{ height:102px; width:102px; text-align:center; margin:0px auto; margin-top:10px; overflow:hidden;}
-.uleft .txname{ margin:0 auto; text-align:center; line-height:20px; margin-top:5px;}
+.uleft .txname{ margin:0 auto; text-align:center; line-height:20px; margin-top:5px;font-size: 16px;font-weight: bolder;font-family: "微软雅黑";}
 .uleft .signimg{ margin:0px auto; text-align:center; margin-top:5px;}
 .uleft .list{ margin-top:5px; width:100%; text-align:left;}
 .uleft .list .on{ background:url(ZD-gr38.gif) no-repeat; height:38px; width:161px; font-weight:bolder;}

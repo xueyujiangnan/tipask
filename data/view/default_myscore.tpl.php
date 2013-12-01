@@ -7,8 +7,8 @@
         </div>
         <div class="txname">
             <?=$user['username']?>
-            <? if($user['islogin']) { ?>            <img src="<?=SITE_URL?>css/default/online.gif" align="absmiddle" title="当前在线" alt="当前在线"/>
-            <? } else { ?>            <img src="<?=SITE_URL?>css/default/outline.gif" align="absmiddle" title="当前离线" alt="当前离线"/>
+            <? if($user['islogin']) { ?>            <img style="width: 25px;height: 25px;" src="<?=SITE_URL?>css/default/online.gif" align="absmiddle" title="当前在线" alt="当前在线"/>
+            <? } else { ?>            <img style="width: 25px;height: 25px;" src="<?=SITE_URL?>css/default/outline.gif" align="absmiddle" title="当前离线" alt="当前离线"/>
             <? } ?>        </div>
         <div class="clr"></div>
         <div class="list">

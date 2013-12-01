@@ -1098,7 +1098,21 @@ function get_remote_image($url, $savepath) {
 /**
  * 自定义的全局函数
  */
-
+function inituser($token){
+	if(!$token){return null;}
+	$xml = '<request type="login" subtype="accountLogin" msid="">
+		<message>
+		  <user token="'.$token.'" />
+		</message>
+		</request>
+		';
+	$result = getWSDLResult($xml);
+	if($result["result"]=="成功"){
+		return $result["message"]["user"]["@attributes"];
+	}else{
+		return null;
+	}
+}
 function login($username,$pwd){
 // 	$username="1007577820@qq.com";
 	$pwd = implode(array_reverse((str_split(base64_encode($pwd),1))));

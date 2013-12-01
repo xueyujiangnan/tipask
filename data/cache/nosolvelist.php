@@ -18,7 +18,7 @@ return array (
     'endtime' => '1390222420',
     'hidden' => '0',
     'answers' => '0',
-    'views' => '2',
+    'views' => '3',
     'goods' => '0',
     'status' => '1',
     'ip' => '127.0.0.1',
