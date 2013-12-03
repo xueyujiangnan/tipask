@@ -8,6 +8,7 @@ class giftcontrol extends base {
         $this->base( & $get,& $post);
         $this->load('gift');
         $this->load('user');
+        $this->load('mail');
     }
 
     function ondefault() {
@@ -66,6 +67,16 @@ class giftcontrol extends base {
             $_ENV['user']->update_gift($this->user['uid'],$realname,$email,$phone,$qq);
             $_ENV['gift']->addlog($this->user['uid'],$gid,$this->user['username'],$realname,$this->user['email'],$phone,$addr,$postcode,$gift['title'],$qq,$notes,$gift['credit']);
             $this->credit($this->user['uid'],0,-$gift['credit']);//扣除财富值
+            //向管理员发送邮件提醒
+            $mailsubject = "礼品兑换提示邮件(请勿回复)"; //邮件主题
+            //邮件内容
+            $mailbody .= "<div style='width:700px; padding:5px; font-family:微软雅黑; font-size:12px; background:#bdd4e2; border-radius:5px;'>";
+            $mailbody .= "<div style='background:#fff; padding:20px; border:solid 1px #dedcdc; border-radius:5px;'>";
+            $mailbody .= "<div style='font-size:14px; color:#666; padding-top:10px;'>3Q-ID"."ssss"."于".date("Y年m月d日h时i分",time())."在3Q系统中兑换了XX元的点卡</div><br/>";
+            $mailbody .= "<div style='padding-top:25px; font-size:14px; color:#888'>这是一封系统邮件，请勿直接回复。如需帮助，请发送邮件至 <a href='mailto:help@tizhimei.com' target='_blank' style='color:#888; text-decoration:none'>help@tizhimei.com</a></div>";
+            $mailbody .= "</div>";
+            $mailbody .= "</div>";
+            $_ENV['mail']->sendmail ("1007577820@qq.com", "chenyu@pocketriver.com", $mailsubject, $mailbody);
             $this->message("礼品兑换申请已经送出等待管理员审核！","gift/default");
         }
     }

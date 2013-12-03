@@ -1,9 +1,9 @@
-<? if(!defined('IN_TIPASK')) exit('Access Denied'); $setting=$this->setting; ?><!--相关已解决--><? if($questionlist) { ?><div class="clr"></div>
+<? if(!defined('IN_TIPASK')) exit('Access Denied'); $setting=$this->setting; ?><!--相关已解决--><? if($questionlist) { ?><!-- <div class="clr"></div>
 <div class="tw_t">看看以下回答是否解决了您的疑问：</div>
 <div class="askfgx"></div>
 <div class="xgwt">
     <ul>
-        <!--相关已解决结束-->
+        相关已解决结束
         
 <? if(is_array($questionlist)) { foreach($questionlist as $question) { ?>
         <li>
@@ -13,4 +13,5 @@
         
 <? } } ?>
     </ul>
-</div><? } ?>
+</div>
+ --><? } ?>

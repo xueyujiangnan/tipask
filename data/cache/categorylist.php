@@ -4,7 +4,7 @@ return array (
   array (
     'id' => '1',
     'name' => '默认分类',
-    'questions' => '2',
+    'questions' => '6',
     'grade' => '1',
     'sublist' => 
     array (

@@ -1,127 +1,51 @@
-{template header}
+{eval global $starttime,$querynum;$mtime = explode(' ', microtime());$runtime=number_format($mtime[1] + $mtime[0] - $starttime,6); $setting=$this->setting;$user=$this->user;$headernavlist=$this->nav;$regular=$this->regular;}
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>问题反馈</title>
+<link href="{SITE_URL}css/default/ask.css" rel="stylesheet" type="text/css" />
+{eval $toolbars="'".str_replace(",", "','", $setting['editor_toolbars'])."'";}
+<script type="text/javascript">
+    g_site_url='{SITE_URL}';
+    g_prefix='{$setting['seo_prefix']}';
+    g_suffix='{$setting['seo_suffix']}';
+    editor_options={toolbars:[["Emotion","snapscreen","InsertImage","attachment","Map","Bold"]],wordCount:{$setting['editor_wordcount']},elementPathEnabled:{$setting['editor_elementpath']}};messcode='{$setting['code_message']}';</script>
+<script type="text/javascript" src="{SITE_URL}js/jquery.js"></script>
+<script type="text/javascript" src="{SITE_URL}js/dialog.js"></script>
+<script type="text/javascript" src="{SITE_URL}js/common.js"></script>
 <script type="text/javascript" src="{SITE_URL}js/ueditor/editor_config.js"></script>
 <script type="text/javascript" src="{SITE_URL}js/ueditor/editor_all.js"></script>
 <script type="text/javascript" src="{SITE_URL}js/ueditor/third-party/SyntaxHighlighter/shCore.js"></script>
 <link rel="stylesheet" href="{SITE_URL}js/ueditor/themes/default/ueditor.css"/>
 <link rel="stylesheet" href="{SITE_URL}js/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css"/>
-<div class="content">
-    <div class="dh" id="pos"><a href="{SITE_URL}">{$setting['site_name']}</a>&gt; 提问问题</div>
-    <div class="left1">
-        <div class="leftt">
-            <ul>
-                <li class="a1"></li>
-                <li class="a2"><div class="juzhong">提问问题</div></li>
-                <li class="a3"></li>
-            </ul>
-        </div>
-        <div class="clr"></div>
-        <div class="leftc">
+<style type="text/css">
+.left1{border:2px solid blue;}
+.left1 input{font-size: 35px;
+line-height: 60px;
+height: 60px;width:480px;}
 
-            <div class="tw_t">{if isset($touser)}您正在向<a href="{url user/space/$touser['uid']}">{$touser['username']}</a>提问{else}请将您的问题告诉我们{/if}:</div>
+</style>
+
+</head>
+<body>
+<div class="content">
+    <div class="left1">
+        <div class="leftc">
             <div class="askfgx"></div>
-            <form name="askform" onsubmit="return check_askform(this);" action="{url question/add}" method="post" >
+            <form name="askform" onsubmit="return check_askform(this);" action="{url api/appask}" method="post" >
                 <div class="tiwen">
                     <div class="shur1">
-                        <h2>您的问题:</h2> <input type="text"  maxlength="100" size="65" name="title" value="{$word}" id="mytitle"  class="input1"  />
+                        <input type="text" placeholder="请为你的问题，设定一个标题" maxlength="100" size="60" name="title" value="{$word}" id="mytitle"  class="input1"  />
+                        <input type="text" style="width:200px;margin-left:20px;" placeholder="问题分类" maxlength="30" size="20" name="type" value="{$word}" id=""  class="input1"  />
                     </div>
                     <div class="clr"></div>
 
                     <div class="shur4">
-                        <div style="margin-left: 75px;">更多问题描述(选填)</div>                      
-                        <script type="text/plain" id="mydescription" name="description" style="width:550px;margin-left:75px;"></script>
+                        <script type="text/plain" id="mydescription" name="description" style="width:710px;margin-top:20px;"></script>
                     </div>
                     <div class="clr"></div>
-                    <div class="shur shur3">
-                        <h2>问题分类</h2>
-                        <div id="classnav" name="classnav">
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                <tr valign="top">
-                                    <td width="15%">
-
-                                        <select  id="ClassLevel1" class="catselect2" size="8" name="classlevel1" style=" font: 16px/18px '宋体',Arial; ">
-                                            <option selected></option>
-                                        </select>
-
-                                    </td>
-                                    <td align="center" valign="middle" width="7%">
-                                        <div><b>→</b></div>
-                                    </td>
-                                    <td width="15%">                                        
-                                        <select  id="ClassLevel2"  class="catselect2" size="8" name="classlevel2">
-                                            <option selected></option>
-                                        </select>                                        
-                                    </td>
-                                    <td align="center" valign="middle" width="7%">
-                                        <div style="display: none;" id="jiantou"><b>→</b></div>
-                                    </td>
-                                    <td width="15%">
-                                        <select id="ClassLevel3"  class="catselect2" size="8" onchange="getCidValue();"  name="classlevel3">
-                                            <option selected></option>
-                                        </select>
-                                    </td>
-                                    <td width="32%"></td>
-                                </tr>
-                                <tr valign="top">
-                                    <td class="tiw_biaozhu" colspan="6" align="left" valign="middle">请您选择正确的分类，以使您的问题尽快得到解答。</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="clr"></div>
-                      <div class="shur shur2">
-                        <div class="shezhi">
-                            <!--{if $setting['code_ask']}-->
-                            <h3>验证码:</h3><input type="text"  maxlength="8" name="code"    class="input4"  />&nbsp;<img  id="verifycode" align="absmiddle"   src="{url user/code}" />&nbsp;<a href="javascript:updatecode();">换一张</a>
-                            <div class="clr"></div> 
-                            <!--{/if}-->
-                            <input type="hidden" value="0" name="cid" />
-                            <input type="hidden" value="{$askfromuid}" name="askfromuid" />                            
-                        </div>
-                    </div>
-                    <div class="clr"></div>
-                    <div class="shur1"><a href="javaScript:showOrhide();" style="font-size: 14px;">高级&nbsp;>></a>
-					</div>
-					 
-					<!-- 高级部分开始-->
-					<div id="senior" style="display:none;">
-					<div class="shur1">
-                        <h2>标签(TAG):</h2>  
-                        <input type="text"  maxlength="8" name="qtags[]" class="input4" value="" />
-                        <input type="text"  maxlength="8" name="qtags[]" class="input4" value="" />                   
-                        <input type="text"  maxlength="8" name="qtags[]" class="input4" value="" />                  
-                        <input type="text"  maxlength="8" name="qtags[]" class="input4" value="" />                   
-                        <input type="text"  maxlength="8" name="qtags[]" class="input4" value="" />                   
-                    </div>
-                    <div class="clr"></div>
-                    <div class="shur shur2">
-                        <h2>问题设置</h2>
-                        <div class="shezhi">
-                            <h3>悬赏分:</h3>                           
-                            <select name="scorelist" id="scorelist" class="select1" onchange="otherscore();">
-                                <option selected="selected" value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="3">3</option>
-                                <option value="5">5</option>
-                                <option value="10">10</option>
-                                <option value="30">30</option>
-                                <option value="50">50</option>
-                                <option value="80">80</option>
-                                <option value="100">100</option>
-                                <option value="other">其他</option>
-                            </select>&nbsp;<span class="zhusi" style="display:none;" id="showscore"><input type="text"  maxlength="8" name="givescore"  id="givescore"  class="input4"  value="0"/></span>&nbsp;分 &nbsp;<span class="zhusi">您目前的财富值:{if $user['credit2']}$user['credit2']{else}0{/if} 悬赏分越高，您的问题会越受关注。</span>
-                            <div class="clr"></div> 
-                            <!--{if $user['uid']}-->
-                            <h3>匿名设定:</h3><input type="checkbox" name="hidanswer" value="1" class="checkbox1" />&nbsp;<span class="zhusi">您需要付出财富值10分</span>
-                            <div class="clr"></div>
-                            <!--{/if}-->
-                            <input type="hidden" value="0" name="cid" />
-                            <input type="hidden" value="{$askfromuid}" name="askfromuid" />                            
-                        </div>
-                    </div>
-                    </div>
-                    <!-- 高级部分结束 -->
                     
-                    <div id="searchresult"></div>
                     <div class="asksubmit"><button name="submit" type="submit" class="btn_addques" ></button></div>
                     <div class="clr"></div>
                 </div>
@@ -138,8 +62,7 @@
                     <li class="gga1"></li>
                     <li class="gga2">
                         <div class="juzhong">
-                            <div class="qico" ><div class="irelate"></div></div>
-                            我的提问
+        					 我的提问
                         </div>
                     </li>
                     <li class="gga3"></li>
@@ -149,7 +72,13 @@
             <div class="ggcon">
                 <ul>
                		<!--{loop $questionlist $question}-->
-               		<li> <a title="{$question['title']}" target="_blank" href="{url question/view/$question['id']}">{eval echo cutstr($question['title'],24);}</a></li>
+               		<!--{if ($question['status']==1)}-->  
+               		<li><a style="color:blue;" title="{$question['title']}" target="_blank" href="{url question/view/$question['id']}">{eval echo cutstr($question['title'],24);}</a></li>
+               		<!--{elseif $question['status']==9}-->
+               		<li><a style="color:green;" title="{$question['title']}" target="_blank" href="{url question/view/$question['id']}">{eval echo cutstr($question['title'],24);}</a></li>
+               		<!--{else}-->
+               		<li><a style="color:orange;" title="{$question['title']}" target="_blank" href="{url question/view/$question['id']}">{eval echo cutstr($question['title'],24);}</a></li>
+               		<!--{/if}--> 
                		<!--{/loop}-->
                 </ul>
             </div>
@@ -162,24 +91,30 @@
             </div>
             <div class="clr"></div>
         </div>
-
         <div class="gg">
             <div class="ggtitle">
                 <ul>
-                    <li class="gga11"></li>
-                    <li class="gga21">
-                        <div class="juzhong">&nbsp;知道小贴士</div>
+                    <li class="gga1"></li>
+                    <li class="gga2">
+                        <div class="juzhong">
+        					 相关提问
+                        </div>
                     </li>
-                    <li class="gga31"></li>
+                    <li class="gga3"></li>
                 </ul>
             </div>
             <div class="clr"></div>
             <div class="ggcon">
                 <ul>
-                    <li><a target="_blank" title="如何提问" href="{url index/help}#如何提问">如何提问</a></li>
-                    <li><a target="_blank" title="如何回答" href="{url index/help}#如何回答">如何回答</a></li>
-                    <li><a target="_blank" title="如何获得积分" href="{url index/help}#如何获得积分">如何获得积分</a></li>
-                    <li><a target="_blank" title="如何处理问题" href="{url index/help}#如何处理问题">如何处理问题</a></li>
+               		<!--{loop $aboutquestionlist $question}-->
+               		<!--{if ($question['status']==1)}-->  
+               		<li><a style="color:blue;" title="{$question['title']}" target="_blank" href="{url question/view/$question['id']}">{eval echo cutstr($question['title'],24);}</a></li>
+               		<!--{elseif $question['status']==9}-->
+               		<li><a style="color:green;" title="{$question['title']}" target="_blank" href="{url question/view/$question['id']}">{eval echo cutstr($question['title'],24);}</a></li>
+               		<!--{else}-->
+               		<li><a style="color:orange;" title="{$question['title']}" target="_blank" href="{url question/view/$question['id']}">{eval echo cutstr($question['title'],24);}</a></li>
+               		<!--{/if}--> 
+               		<!--{/loop}-->
                 </ul>
             </div>
             <div class="ggbuttom">
@@ -370,4 +305,5 @@
         }           
     }    
 </script>
-{template footer}
+</body>
+</html>

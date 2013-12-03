@@ -222,7 +222,6 @@ class usermodel {
         (!$uid) && $uid = $this->base->user['uid'];
         $onlinetime = $this->base->time - intval($this->base->setting['sum_onlineuser_time']) * 60;
         $islogin = $this->db->result_first("SELECT islogin FROM " . DB_TABLEPRE . "session WHERE uid=$uid AND time>$onlinetime");
-        $islogin2 = isLogin();
         if ($islogin && $uid > 0) {
             return $islogin;
         }

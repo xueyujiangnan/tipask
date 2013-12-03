@@ -218,6 +218,29 @@ class questioncontrol extends base {
         $this->credit($this->user['uid'], $this->setting['credit1_answer'], $this->setting['credit2_answer']);
         //给提问者发送通知
         $this->send($question['authorid'], $question['id'], 0);
+        //给提问者发送邮件
+       	$user = $_ENV['user']->get_by_uid($question['authorid']);
+        if($user["email"]){
+	        $this->load("mail");
+	        $mailsubject = "问答提醒邮件(请勿回复)"; //邮件主题
+	        //邮件内容
+	        $mailbody .= "<div style='width:700px; padding:5px; font-family:微软雅黑; font-size:12px; background:#bdd4e2; border-radius:5px;'>";
+	        $mailbody .= "<div style='background:#268dc7;border-radius:5px 5px 0 0;padding-top:13px;padding-left: 15px;'><img src='http://as' title='体之美'></div>";
+	        $mailbody .= "<div style='background:#fff; padding:20px; border:solid 1px #dedcdc; border-radius:5px;'>";
+	        $mailbody .= "<div style='font-size:14px; color:#666; padding-top:10px;'>你好，".$user["username"]."</div><br/>";
+	        $mailbody .= "<div style='font-size:14px; color:#197AA7; padding-top:10px;'>您的问题，".$question['title']."有了新的回答。</div>";
+	        $mailbody .= "<div style='clear:both;'></div>";
+	        $mailbody .= "<div style='color: #666; padding-TOP:5px; font-size:14px;'><p style='font-size:14px;'>请点击下面的链接，查看最新回答：</p></div>";
+	        $mailbody .= "<div style='padding-bottom:25px;'><a href='http://www.baidu.com' style=' padding-top:15px; font-size:14px; color:#197aa7; display:block;  word-break:break-all; text-decoration:underline' target='_blank'>http://www.baidu.com/</a></div>";
+	        $mailbody .= "<div style='color: #666; padding-bottom:15px; font-size:14px;'>如果你不能点击上面链接，还可以将链接复制到浏览器地址栏中访问。</div>";
+	        $mailbody .= "</div>";
+	        $mailbody .= "</div>";
+	        $_ENV['mail']->sendmail ($user["email"], "chenyu@pocketriver.com", $mailsubject, $mailbody);
+        }
+        
+        //给提问者发送3q推送信息
+        $notifyresult = notify(tcookie('token'),$question['title'],'回答提醒',$question['content'],$question['author']);
+//         var_dump($notifyresult);
         //如果ucenter开启，则postfeed
         if ($this->setting["ucenter_open"] && $this->setting["ucenter_answer"]) {
             $this->load('ucenter');

@@ -1,7 +1,7 @@
 <?php
 return array (
-  'solves' => '0',
-  'nosolves' => '2',
-  'bestadopt' => 0,
+  'solves' => '1',
+  'nosolves' => '10',
+  'bestadopt' => 9.09,
 );
 ?>

@@ -135,7 +135,7 @@
                     <li class="gga2">
                         <div class="juzhong">
                             <div class="qico" ><div class="irelate"></div></div>
-                            我问过的
+                            我的提问
                         </div>
                     </li>
                     <li class="gga3"></li>
@@ -146,7 +146,7 @@
                 <ul>
                
 <? if(is_array($questionlist)) { foreach($questionlist as $question) { ?>
-               		<li> <a title="<?=$question?>'title']}" target="_blank" href="<?=SITE_URL?>?q-<?=$question['id']?>.html"><? echo cutstr($question['title'],24); ?></a></li>
+               		<li> <a title="<?=$question['title']?>" target="_blank" href="<?=SITE_URL?>?q-<?=$question['id']?>.html"><? echo cutstr($question['title'],24); ?></a></li>
                		
 <? } } ?>
                 </ul>

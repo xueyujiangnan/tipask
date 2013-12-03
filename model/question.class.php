@@ -178,10 +178,10 @@ class questionmodel {
 
     /* 我的所有提问，用户中心 */
 
-    function list_by_uid($uid, $status, $start=0, $limit=10) {
+    function list_by_uid($uid, $status, $start=0, $limit=10 ,$order="time",$ordertypes="DESC") {
         $questionlist = array();
         $sql = 'SELECT * FROM ' . DB_TABLEPRE . 'question WHERE `authorid` = ' . $uid;
-        $sql .=$this->statustable[$status] . " ORDER BY `time` DESC LIMIT $start , $limit";
+        $sql .=$this->statustable[$status] . " ORDER BY `$order` $ordertypes  LIMIT $start , $limit";
         $query = $this->db->query($sql);
         while ($question = $this->db->fetch_array($query)) {
             $question['category_name'] = $this->base->category[$question['cid']]['name'];

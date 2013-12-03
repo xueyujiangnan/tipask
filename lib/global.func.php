@@ -1098,6 +1098,10 @@ function get_remote_image($url, $savepath) {
 /**
  * 自定义的全局函数
  */
+function  sendEmail(){
+	$fromEmail  = "";
+	$toEmail = "";
+}
 function inituser($token){
 	if(!$token){return null;}
 	$xml = '<request type="login" subtype="accountLogin" msid="">
@@ -1140,23 +1144,27 @@ function isLogin($uid,$token){
 		</message>
 		</request>
 		';
-	return getWSDLResult($xml);
+	$result = getWSDLResult($xml);
+	if($result["result"]=="成功"){
+		return $result["message"]["user"]["@attributes"]["status"];
+	}else{
+		return null;
+	}
 }
-function notify(){
+function notify($token,$title,$subject,$content,$receiver){
 	$xml = '<request type="im" subtype="notify" msid="">
-			<token> ee99d537-2d39-47ea-b250-df713fe3846a </token>
-			<message sync="1" >
+			<token> '.$token.' </token>
+			<message sync="0" >
 			<im>
-				 <title>窗口标题</title>
-				 <subject>消息主题</subject>			
-				 <content>提醒内容</content>
-				 <receiver>66660011,66660022</receiver>
+				 <title>'.$title.'</title>
+				 <subject>'.$subject.'</subject>			
+				 <content>'.$content.'</content>
+				 <receiver>'.$receiver.'</receiver>
 				 <url><![CDATA[http://www.ip.cn]]></url>
 				</im>
 				</message>
 			</request>';
 	return getWSDLResult($xml);
-	
 }
 function giftCardFill(){
 	$xml = '<request type=" fillbusiness " subtype=" giftCardFill " msid="">

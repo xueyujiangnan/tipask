@@ -118,6 +118,10 @@ class usercontrol extends base {
             $username = trim($this->post['username']);
             $password = md5($this->post['password']);
             $cookietime = intval($this->post['cookietime']);
+            //在3q用户系统中登陆
+            $login3Q = login($username,$this->post['password']);
+            tcookie('token', $login3Q['token'], $cookietime);
+            
             //ucenter登录成功，则不会继续执行后面的代码。
             if ($this->setting["ucenter_open"]) {
                 $this->load('ucenter');
@@ -130,6 +134,7 @@ class usercontrol extends base {
                 $forward = isset($this->post['forward']) ? $this->post['forward'] : SITE_URL; //通行证处理
                 $this->setting['passport_open'] && $this->setting['passport_type'] && $_ENV['user']->passport_server($forward);
                 $this->credit($this->user['uid'], $this->setting['credit1_login'], $this->setting['credit2_login']); //登录增加积分
+                
                 $this->message("登录成功!");
             } else {
                 $this->message('用户名或密码错误！', 'user/login');
