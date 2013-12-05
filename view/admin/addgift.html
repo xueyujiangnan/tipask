@@ -26,6 +26,11 @@
 					<td class="altbg2"><input class="txt" {if isset($gift['credit'])} value="{$gift['credit']}" {/if} name="giftprice" /></td>
 				</tr>
 				<tr>
+					<td class="altbg1" width="45%"><b>虚拟卡卡号:</b><br><span class="smalltxt">虚拟3Q充值时候使用的卡号，<span style="color:red;">若是实物则不填</span>，例如：￥10:askscorecard-001 ￥50：askscorecard-005 ￥100：skscorecard-010</span></td>
+					<td class="altbg2">
+					<input class="txt" {if isset($gift['credit'])} value="{$gift['gift_card']}" {/if} name="gift_card" /></td>
+				</tr>
+				<tr>
 					<td class="altbg1" width="45%"><b>礼品描述:</b><br><span class="smalltxt">对于该礼品的简短说明</span></td>
 					<td class="altbg2"><textarea class="area" name="giftdesrc"  style="height:100px;width:300px;">{if isset($gift['description'])}{$gift['description']}{/if}</textarea></td>
 				</tr>

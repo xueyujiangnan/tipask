@@ -240,6 +240,10 @@ class questioncontrol extends base {
         
         //给提问者发送3q推送信息
         $notifyresult = notify(tcookie('token'),$question['title'],'回答提醒',$question['content'],$question['author']);
+        //如果失败，则存储下来
+        if(!$notifyresult){
+        	$_ENV['ucenter']->answer_feed($question, $content);
+        }
 //         var_dump($notifyresult);
         //如果ucenter开启，则postfeed
         if ($this->setting["ucenter_open"] && $this->setting["ucenter_answer"]) {

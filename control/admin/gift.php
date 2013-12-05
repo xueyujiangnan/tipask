@@ -27,6 +27,7 @@ class admin_giftcontrol extends base {
             $title = $this->post['giftname'];
             $desrc = $this->post['giftdesrc'];
             $credit = intval($this->post['giftprice']);
+            $giftCard = $this->post['gift_card'];
             $imgname=strtolower($_FILES['imgurl']['name']);
             if(''==$title || !$credit) {
                 $this->ondefault('请正确填写礼品相关信息！');
@@ -42,7 +43,7 @@ class admin_giftcontrol extends base {
             $filepath = '/data/attach/giftimg/gfit'.random(6,0).'.'.$type;
             forcemkdir(TIPASK_ROOT.'/data/attach/giftimg');
             if(move_uploaded_file($_FILES['imgurl']['tmp_name'],TIPASK_ROOT.$filepath)) {
-                $_ENV['gift']->add($title,$desrc,$filepath,$credit);
+                $_ENV['gift']->add($title,$desrc,$filepath,$credit,$giftCard);
                 $this->ondefault('添加成功！');
             }else {
                 $this->ondefault('服务器忙，请稍后再试！');

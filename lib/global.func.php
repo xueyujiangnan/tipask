@@ -1154,7 +1154,7 @@ function isLogin($uid,$token){
 function notify($token,$title,$subject,$content,$receiver){
 	$xml = '<request type="im" subtype="notify" msid="">
 			<token> '.$token.' </token>
-			<message sync="0" >
+			<message sync="1" >
 			<im>
 				 <title>'.$title.'</title>
 				 <subject>'.$subject.'</subject>			
@@ -1166,11 +1166,11 @@ function notify($token,$title,$subject,$content,$receiver){
 			</request>';
 	return getWSDLResult($xml);
 }
-function giftCardFill(){
+function giftCardFill($gift_cardid,$gift_cardpwd){
 	$xml = '<request type=" fillbusiness " subtype=" giftCardFill " msid="">
 			<token> ee99d537-2d39-47ea-b250-df713fe3846a </token>
 			<message> 
-			<info gift_cardid="礼品卡号" gift_cardpwd="md5(礼品卡的密码)" gift_cardtype="礼品卡类型" filltype="1"/>
+			<info gift_cardid="'.$gift_cardid.'" gift_cardpwd="'.$gift_cardpwd.'" gift_cardtype="AskScore" filltype="1"/>
 			</message>
 			</request>';
 	return getWSDLResult($xml);

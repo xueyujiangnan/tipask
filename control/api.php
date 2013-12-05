@@ -11,6 +11,7 @@ class apicontrol extends base {
         $this->load('answer');
         $this->load("favorite");
         $this->load("mail");
+        $this->load("notify");
     }
     function onnotify(){
     	$answerid = $this->post['answerid'];
@@ -28,6 +29,9 @@ class apicontrol extends base {
      * app客户端提问题
      */
     function onappask(){
+//     	$result =  $_ENV['notify']->add("123455","122222","问题标题","asdfasdf");
+//     	echo $result;
+//     	exit();
       if (isset($this->post['submit'])) {
             //处理提交问题后的操作
       $title = $this->post['title'];

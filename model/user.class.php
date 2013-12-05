@@ -106,8 +106,6 @@ class usermodel {
             tcookie('auth', $auth, $cookietime);
         else
             tcookie('auth', $auth);
-
-        tcookie('loginuser', '');
         $this->base->user['newmsg'] = 0;
     }
 

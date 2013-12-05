@@ -429,25 +429,25 @@ class usercontrol extends base {
         include template('profile');
     }
 
-    function onuppass() {
-        $this->load("ucenter");
-        $navtitle = "修改密码";
-        if (isset($this->post['submit'])) {
-            if (trim($this->post['newpwd']) == '') {
-                $this->message("新密码不能为空！", 'user/uppass');
-            } else if (trim($this->post['newpwd']) != trim($this->post['confirmpwd'])) {
-                $this->message("两次输入不一致", 'user/uppass');
-            } else if (trim($this->post['oldpwd']) == trim($this->post['newpwd'])) {
-                $this->message('新密码不能跟当前密码重复!', 'user/uppass');
-            } else if (md5(trim($this->post['oldpwd'])) == $this->user['password']) {
-                $_ENV['user']->uppass($this->user['uid'], trim($this->post['newpwd']));
-                $this->message("密码修改成功", 'user/uppass');
-            } else {
-                $this->message("旧密码错误！", 'user/uppass');
-            }
-        }
-        include template('uppass');
-    }
+//     function onuppass() {
+//         $this->load("ucenter");
+//         $navtitle = "修改密码";
+//         if (isset($this->post['submit'])) {
+//             if (trim($this->post['newpwd']) == '') {
+//                 $this->message("新密码不能为空！", 'user/uppass');
+//             } else if (trim($this->post['newpwd']) != trim($this->post['confirmpwd'])) {
+//                 $this->message("两次输入不一致", 'user/uppass');
+//             } else if (trim($this->post['oldpwd']) == trim($this->post['newpwd'])) {
+//                 $this->message('新密码不能跟当前密码重复!', 'user/uppass');
+//             } else if (md5(trim($this->post['oldpwd'])) == $this->user['password']) {
+//                 $_ENV['user']->uppass($this->user['uid'], trim($this->post['newpwd']));
+//                 $this->message("密码修改成功", 'user/uppass');
+//             } else {
+//                 $this->message("旧密码错误！", 'user/uppass');
+//             }
+//         }
+//         include template('uppass');
+//     }
 
     // 1提问  2回答
     function onspace() {

@@ -17,14 +17,14 @@ return array (
     'time' => '1386084473',
     'endtime' => '1391268473',
     'hidden' => '0',
-    'answers' => '0',
-    'views' => '1',
+    'answers' => '1',
+    'views' => '3',
     'goods' => '0',
     'status' => '1',
     'ip' => '127.0.0.1',
     'search_words' => '',
     'category_name' => NULL,
-    'format_time' => '7秒前',
+    'format_time' => '2013/12/03 23:27',
   ),
   1 => 
   array (
@@ -50,7 +50,7 @@ return array (
     'ip' => '127.0.0.1',
     'search_words' => '',
     'category_name' => NULL,
-    'format_time' => '13分钟前',
+    'format_time' => '2013/12/03 23:14',
   ),
   2 => 
   array (
@@ -76,7 +76,7 @@ return array (
     'ip' => '127.0.0.1',
     'search_words' => '',
     'category_name' => NULL,
-    'format_time' => '23小时前',
+    'format_time' => '2013/12/03 00:06',
   ),
   3 => 
   array (
@@ -102,7 +102,7 @@ return array (
     'ip' => '127.0.0.1',
     'search_words' => '',
     'category_name' => NULL,
-    'format_time' => '23小时前',
+    'format_time' => '2013/12/03 00:06',
   ),
   4 => 
   array (
@@ -128,7 +128,7 @@ return array (
     'ip' => '127.0.0.1',
     'search_words' => '',
     'category_name' => NULL,
-    'format_time' => '23小时前',
+    'format_time' => '2013/12/03 00:06',
   ),
 );
 ?>

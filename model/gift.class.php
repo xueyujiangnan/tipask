@@ -48,8 +48,8 @@ class giftmodel {
         }
         return $giftlist;
     }
-    function add($title,$description,$image,$credit) {
-        $this->db->query('INSERT INTO '.DB_TABLEPRE."gift(title,description,image,credit,time) values ('$title','$description','$image',$credit,'{$this->base->time}')");
+    function add($title,$description,$image,$credit,$giftCard) {
+        $this->db->query('INSERT INTO '.DB_TABLEPRE."gift(title,description,image,credit,time,gift_card) values ('$title','$description','$image',$credit,'{$this->base->time}','$giftCard')");
         return $this->db->insert_id();
     }
 

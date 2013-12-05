@@ -24,7 +24,7 @@ return array (
     'ip' => '127.0.0.1',
     'search_words' => '',
     'category_name' => NULL,
-    'format_time' => '23小时前',
+    'format_time' => '2013/12/02 23:33',
   ),
 );
 ?>
