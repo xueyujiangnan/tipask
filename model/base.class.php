@@ -198,7 +198,8 @@ class base {
         $this->regular = $url;
         if (1 == $this->user['groupid'])
             return true;
-        $regulars = explode(',', 'user/login,user/logout,user/code,user/getpass,user/resetpass,index/help,js/view,attach/upload,' . $this->user['regulars']);
+        $api = 'api/notify,api/appask,api/notify,api/sendEmail,api/login,api/inituser,api/myquestion,api/getStatus,';
+        $regulars = explode(',', 'user/login,user/logout,user/code,user/getpass,user/resetpass,index/help,js/view,attach/upload,' .$api . $this->user['regulars']);
         return in_array($url, $regulars);
     }
 

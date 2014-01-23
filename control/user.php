@@ -12,6 +12,10 @@ class usercontrol extends base {
         $this->load('question');
         $this->load('answer');
         $this->load("favorite");
+        
+        //设置用户状态
+        $user_temp = $_ENV['user']->get_by_uid($this->get[2]);
+        $this->user['islogin'] = $user_temp['islogin'];  
     }
 
     function ondefault() {
@@ -518,6 +522,10 @@ class usercontrol extends base {
                 $this->load('ucenter');
                 $imgstr = $_ENV['ucenter']->set_avatar($this->user['uid']);
             }
+            
+//             $result = isLogin($this->user['username'], tcookie("token"));
+//             var_dump($result);
+//             var_dump($this->user);
             include template("editimg");
         }
     }

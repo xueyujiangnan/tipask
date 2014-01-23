@@ -12,7 +12,7 @@
         <div class='hyn'>
             <p>
                 <!--{if 0!=$user['uid']}-->
-                您好,<a href="{url user/default}"><b>{$user['username']}</b></a>
+                您好,<a href="{url user/default}"><b>{$user['username'].$user['isLogin']}</b></a>
                 <!--{if $user['newmsg']>0}-->
                 <span class="separe">&nbsp;|&nbsp;</span><a id="TopLink_MessageBox" href="{url message/new}" >消息(<span id="MessagesCount" style="color: rgb(255, 0, 0);font-weight:bold ;">{$user['newmsg']}</span>)</a>
                 <!--{/if}-->

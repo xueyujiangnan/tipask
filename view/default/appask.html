@@ -21,19 +21,17 @@
 <link rel="stylesheet" href="{SITE_URL}js/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css"/>
 <style type="text/css">
 .left1{border:2px solid blue;}
-.left1 input{font-size: 35px;
-line-height: 60px;
-height: 60px;width:480px;}
-
+.left1 input{font-size: 35px;line-height: 60px;height: 60px;width:480px;}
 </style>
 
 </head>
-<body>
+<body style="overflow:hidden;">
 <div class="content">
     <div class="left1">
         <div class="leftc">
             <div class="askfgx"></div>
             <form name="askform" onsubmit="return check_askform(this);" action="{url api/appask}" method="post" >
+            <input type="hidden" value="0" name="cid" />
                 <div class="tiwen">
                     <div class="shur1">
                         <input type="text" placeholder="请为你的问题，设定一个标题" maxlength="100" size="60" name="title" value="{$word}" id="mytitle"  class="input1"  />
@@ -141,7 +139,7 @@ height: 60px;width:480px;}
             $("#searchresult").load(searchurl);
         });
     });
-    var showtagdesc = true;
+    /* var showtagdesc = true;
     var sortobj=eval('($category_js)');
     var g_ClassLevel1;
     var g_ClassLevel2;
@@ -168,7 +166,7 @@ height: 60px;width:480px;}
         {
             ClassLevel1.options[i] = new Option(class_level_1[i][1], class_level_1[i][0]);
         }
-        // ClassLevel1.options[0].selected = true;
+        ClassLevel1.options[0].selected = true;
         ClassLevel1.length = i;
     }
     function FillClassLevel2(ClassLevel2, class_level_1_id)
@@ -216,7 +214,7 @@ height: 60px;width:480px;}
         ClassLevel2_onchange();
 	
     }
-    function InitClassLevelList(ClassLevel1, ClassLevel2, ClassLevel3)
+   function InitClassLevelList(ClassLevel1, ClassLevel2, ClassLevel3)
     {
         g_ClassLevel1=ClassLevel1;
         g_ClassLevel2=ClassLevel2;
@@ -236,7 +234,7 @@ height: 60px;width:480px;}
         blank_pos = selected_id_list.length;
     }
     var id_str = selected_id_list.substr(0, blank_pos);
-    g_ClassLevel1.value = id_str;
+    g_ClassLevel1.value = id_str; 
     ClassLevel1_onchange();
 
     if (find_blank == true) {
@@ -260,7 +258,7 @@ height: 60px;width:480px;}
             id_str = selected_id_list.substr(0, blank_pos);
             g_ClassLevel3.value = id_str;
         }
-    }
+    } */
 
     /*检查*/
     function check_askform(obj){
@@ -269,10 +267,10 @@ height: 60px;width:480px;}
             obj.title.focus();
             return false;
         }
-        if(obj.classlevel1.selectedIndex==-1){
+        /* if(obj.classlevel1.selectedIndex==-1){
             alert("没有选择分类!");
             return false;
-        }
+        } 
         <!--{if $user['uid']}-->
         //检查财富值是否够用
         var offerscore=0;
@@ -287,7 +285,7 @@ height: 60px;width:480px;}
         }
         <!--{/if}-->
         if(showtagdesc)
-            $("#qtags").val("");
+            $("#qtags").val("");*/
     }
     function otherscore(){
         if($("#scorelist").val() == 'other'){

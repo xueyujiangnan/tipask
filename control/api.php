@@ -1,18 +1,23 @@
 <?php
 
-!defined('IN_TIPASK') && exit('Access Denied');
-
 class apicontrol extends base {
     function apicontrol(& $get, & $post) {
         $this->base(& $get, & $post);
         $this->load('user');
-        $_ENV['user']->refresh(1, 1, intval(3600));
+//         $_ENV['user']->refresh(1, 1, intval(3600));
         $this->load('question');
         $this->load('answer');
         $this->load("favorite");
         $this->load("mail");
         $this->load("notify");
+        $this->load('category');
+        $this->load("userlog");
+        //设置用户状态
+        $this->user['islogin'] = isLogin($this->user['username'], tcookie("token"));
+        
     }
+    
+    // api/notify,api/appask,api/notify,api/sendEmail,api/login,api/inituser,api/myquestion,api/getStatus,
     function onnotify(){
     	$answerid = $this->post['answerid'];
     	$answeruser = $this->post['answeruser'];
@@ -34,24 +39,19 @@ class apicontrol extends base {
 //     	exit();
       if (isset($this->post['submit'])) {
             //处理提交问题后的操作
-      $title = $this->post['title'];
+     		$title = $this->post['title'];
             $description = $this->post['description'];
-            $cid1 = $this->post['classlevel1'];
-            $cid2 = $this->post['classlevel2'];
-            $cid3 = $this->post['classlevel3'];
             $cid = $this->post['cid'];
-            $tags = array_filter($this->post['qtags']);
+            
+            $cid1 = $this->post['type'];
             $hidanswer = intval($this->post['hidanswer']) ? 1 : 0;
-            $price = intval($this->post['givescore']);
-            $askfromuid = $this->post['askfromuid'];
+            $price = 0;
+            
             //检查魅力值
             //if($this->user['credit3']<$this->user)
             $this->setting['code_ask'] && $this->checkcode(); //检查验证码
             //检查财富值
             (intval($this->user['credit3']) < $this->setting['allow_credit3']) && $this->message("你的魅力太低，禁止提问，如有问题请联系管理员!", 'BACK');
-            $offerscore = $price;
-            ($hidanswer) && $offerscore+=10;
-            (intval($this->user['credit2']) < $offerscore) && $this->message("财富值不够!", 'BACK');
             //检查审核和内容外部URL过滤
             $status = intval(1 != (1 & $this->setting['verify_question']));
             $allow = $this->setting['allow_outer'];
@@ -76,30 +76,22 @@ class apicontrol extends base {
             ($this->user['questionlimits'] && ($_ENV['userlog']->rownum_by_time('ask') >= $this->user['questionlimits'])) &&
                     $this->message("你已超过每小时最大提问数" . $this->user['questionlimits'] . ',请稍后再试！', 'BACK');
 
-            $qid = $_ENV['question']->add($title, $description, $hidanswer, $price, $cid, $cid1, $cid2, $cid3, $status);
-            $tags && $_ENV['tag']->multi_add($tags, $qid);
-
+            $qid = $_ENV['question']->add($title, $description, $hidanswer, $price, $cid, $cid1);
             //增加用户积分，扣除用户悬赏的财富
             if ($this->user['uid']) {
-                $this->credit($this->user['uid'], 0, -$offerscore, 0, 'offer');
                 $this->credit($this->user['uid'], $this->setting['credit1_ask'], $this->setting['credit2_ask']);
+            }else{
+            	echo "请先登录才能操作";
+            	exit();
             }
-//             $viewurl = urlmap('question/view/' . $qid, 2);
-            /* 如果是向别人提问，则需要发个消息给别人 */
-            if ($askfromuid) {
-                $this->load("message");
-                $this->load("user");
-                $touser = $_ENV['user']->get_by_uid($askfromuid);
-                $_ENV['message']->add($this->user['username'], $this->user['uid'], $touser['uid'], '问题求助:' . $title, $description . '<br /> <a href="' . SITE_URL . $this->setting['seo_prefix'] . $viewurl . $this->setting['seo_suffix'] . '">点击查看问题</a>');
-                sendmail($touser, '问题求助:' . $title, $description . '<br /> <a href="' . SITE_URL . $this->setting['seo_prefix'] . $viewurl . $this->setting['seo_suffix'] . '">点击查看问题</a>');
-            }
-            //如果ucenter开启，则postfeed
+            $viewurl = urlmap('question/view/' . $qid, 2);
+           // 如果ucenter开启，则postfeed
             if ($this->setting["ucenter_open"] && $this->setting["ucenter_ask"]) {
                 $this->load('ucenter');
                 $_ENV['ucenter']->ask_feed($qid, $title, $description);
             }
+			
             $_ENV['userlog']->add('ask');
-            
             include template('appaskresult');
 //             if (0 == $status) {
 //                 $this->message('问题发布成功！为了确保问答的质量，我们会对您的提问内容进行审核。请耐心等待......', 'BACK');
@@ -107,6 +99,31 @@ class apicontrol extends base {
 //                 $this->message("问题发布成功!", $viewurl);
 //             }
         } else {
+//         	$token = $this->get['token'];
+//         	if(!$token){
+//         		ajax(0,"token不能为空");
+//         		exit();
+//         	}
+//         	$userInfo = inituser($token);
+//         	if(!$userInfo){
+//         		ajax(0,"token错误！");
+//         	}else{
+//         		//若是手机号码注册，则自动生成一个不可用邮箱，若是用s邮箱注册则$email就为改用户名
+//         		$email = $userInfo["acc_nbr"]."@3q.com";
+//         		//判断是否有这个用户，若是没有就创建，若是有就登陆
+//         		$user = $_ENV['user']->get_by_username($userInfo['acc_nbr']);
+//         		if (!$user) {
+//         			$uid = $_ENV['user']->add($userInfo["acc_nbr"], "123456", $email);
+//         			$user = $_ENV['user']->get_by_username($userInfo["acc_nbr"]);
+//         		}
+//         		//登陆
+//         		$_ENV['user']->refresh($user['uid'], 1, intval(3600));
+// //         		$data["user"] =$user;
+// //         		$data["3q_user"] = $userInfo;
+// //         		ajax(1,"登陆成功",$data);//返回登陆用户的3q信息和问答系统账户信息
+//         	}
+        	
+        	$category_js = $_ENV['category']->get_js();
         	$questionlist = $_ENV['question']->list_by_uid($this->user['uid'], "all", 0, 6,'status','Asc');
         	$aboutquestionlist = $_ENV['question']->list_by_uid($this->user['uid'], "all", 0, 6,'status','Asc');
             include template('appask');
@@ -136,8 +153,10 @@ class apicontrol extends base {
 	 * 获取用户状态
 	 */
     function ongetStatus() {
-    	$token = $this->post["token"];
-    	$acc_nbr = $this->post['acc_nbr'];
+    	$token = $this->get["token"];
+    	$acc_nbr = $this->get['acc_nbr'];
+//     	$token = $this->post["token"];
+//     	$acc_nbr = $this->post['acc_nbr'];
 //     	$token = "66062970-0d125db0-9604-4244-a667-fdeb18b3a8a9";
 //     	$acc_nbr = "66220097,66220021,66062970";
     	if(!$token){
@@ -171,7 +190,7 @@ class apicontrol extends base {
 	/**
 	 * 获取用户的最近10条问题记录
 	 */
-    function onrmyquestion() {
+    function onmyquestion() {
     	$uid = $this->post["uid"];
     	if(!$uid){
     		ajax(0,"必须要uid参数");
@@ -185,7 +204,8 @@ class apicontrol extends base {
      * 初始化用户
      */
     function oninituser() {
-    	$token = $this->post['token'];
+    	$token = $this->get['token'];
+// 		$token = "66062970-b57ab8c5-c8bf-4c0c-a3fa-ead9afc1a1eb";
     	if(!$token){
     		ajax(0,"token不能为空");
     		exit();
@@ -213,8 +233,10 @@ class apicontrol extends base {
 	 * 用户登陆
 	 */
     function onlogin() {
-    	$username = $this->post['username'];
-    	$pwd = $this->post['pwd'];
+    	$username = $this->get['username'];
+    	$pwd = $this->get['pwd'];
+//     	$username = $this->post['username'];
+//     	$pwd = $this->post['pwd'];
 //     	$username = "1007577820@qq.com";
 //     	$username = "chenyu@pocketriver.com";
 //     	$pwd = "lengxueyu520";

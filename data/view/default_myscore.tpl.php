@@ -47,8 +47,8 @@
                     <li>采纳率：<?=$adoptpercent?>%</li>
                     <li>提问数：<?=$user['questions']?></li>
                     <li>回答数:<?=$user['answers']?></li>
-                    <li>QQ：<?=$user['qq']?></li>
-                    <li>MSN:<?=$user['msn']?></li>
+                   <!--  <li>QQ：<?=$user['qq']?></li>
+                    <li>MSN:<?=$user['msn']?></li> -->
 
                 </ul>
                 <div class="clr"></div>
@@ -69,7 +69,7 @@
                 </div>
                 <div class="jiben">
                     <img width="16px" height="16px" align="absmiddle" src="<?=SITE_URL?>css/default/mymsg.gif" /> <a title="我的消息" target="_top" href="<?=SITE_URL?>?message/new.html">我的消息</a>&nbsp;&nbsp;
-                    <img width="16px" height="16px" src="<?=SITE_URL?>css/default/myquestion.gif" /> <a title="修改密码" target="_top" href="<?=SITE_URL?>?user/uppass.html">修改密码</a>
+                    <!-- <img width="16px" height="16px" src="<?=SITE_URL?>css/default/myquestion.gif" /> <a title="修改密码" target="_top" href="<?=SITE_URL?>?user/uppass.html">修改密码</a> -->
                 </div>
                 <div class="jiben">
                     <img width="16px" height="16px" align="absmiddle" src="<?=SITE_URL?>css/default/myinfo.gif"> <a title="个人信息" target="_top" href="<?=SITE_URL?>?user/profile.html">个人信息</a>&nbsp;&nbsp;

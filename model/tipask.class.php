@@ -12,6 +12,7 @@ class tipask {
     var $get = array();
     var $post = array();
     var $vars = array();
+    var $parmentVal = array();
 
     function tipask() {
         $this->init_request();
@@ -27,6 +28,7 @@ class tipask {
         require TIPASK_ROOT . '/config.php';
         header('Content-type: text/html; charset=' . TIPASK_CHARSET); //给浏览器识别，sbie6
         $querystring = isset($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : '';
+        
         $pos = strpos($querystring, '.');
         if ($pos !== false) {
             $querystring = substr($querystring, 0, $pos);
@@ -49,10 +51,20 @@ class tipask {
         }
         unset($GLOBALS, $_ENV, $HTTP_GET_VARS, $HTTP_POST_VARS, $HTTP_COOKIE_VARS, $HTTP_SERVER_VARS, $HTTP_ENV_VARS);
 
+        //解析URL地址中的参数
+        $parments = explode('?', isset($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : '');
+        if(!empty($parments[1])){
+        	$keyValue = explode('&', $parments[1]);
+        	foreach ($keyValue as $val){
+        		$record = explode('=', $val);
+        		$this->get[$record[0]] =$record[1] ;
+        	}
+        }
         $this->get = taddslashes($this->get, 1);
         $this->post = taddslashes(array_merge($_GET, $_POST));
         checkattack($this->post, 'post');
         checkattack($this->get, 'get');
+        checkattack($this->parmentVal, 'parmentVal');
         unset($_POST);
     }
 

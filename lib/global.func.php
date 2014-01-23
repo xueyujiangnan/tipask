@@ -1104,12 +1104,15 @@ function  sendEmail(){
 }
 function inituser($token){
 	if(!$token){return null;}
-	$xml = '<request type="login" subtype="accountLogin" msid="">
+	$xml = '<request type="login" subtype="checkedToken" msid="">
 		<message>
 		  <user token="'.$token.'" />
 		</message>
 		</request>
 		';
+// 	var_dump($xml);
+// 	exit();
+	
 	$result = getWSDLResult($xml);
 	if($result["result"]=="成功"){
 		return $result["message"]["user"]["@attributes"];
@@ -1144,7 +1147,9 @@ function isLogin($uid,$token){
 		</message>
 		</request>
 		';
+	
 	$result = getWSDLResult($xml);
+// 	var_dump($result["message"]["user"]);
 	if($result["result"]=="成功"){
 		return $result["message"]["user"]["@attributes"]["status"];
 	}else{

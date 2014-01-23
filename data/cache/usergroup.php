@@ -22,7 +22,7 @@ return array (
     'questionlimits' => '0',
     'answerlimits' => '0',
     'credit3limits' => '0',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove,admin_main/default,admin_main/header,admin_main/menu,admin_main/stat,admin_main/login,admin_main/logout,admin_category/default,admin_category/add,admin_category/edit,admin_category/view,admin_category/remove,admin_category/reorder,admin_question/default,admin_question/searchquestion,admin_question/searchanswer,admin_question/removequestion,admin_question/removeanswer,admin_question/edit,admin_question/editanswer,admin_question/verifyanswer,admin_question/verify,admin_question/recommend,admin_question/inrecommend,admin_question/close,admin_question/delete,admin_question/renametitle,admin_question/editquescont,admin_question/movecategory,admin_question/nosolve,admin_question/editanswercont,admin_question/deleteanswer,admin_user/default,admin_user/search,admin_user/add,admin_user/remove,admin_user/edit,admin_usergroup/default,admin_usergroup/add,admin_usergroup/remove,admin_usergroup/edit,admin_note/default,admin_note/add,admin_note/edit,admin_note/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/answer,user/space_ask,user/space_answer,user/space,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove,admin_main/default,admin_main/header,admin_main/menu,admin_main/stat,admin_main/login,admin_main/logout,admin_category/default,admin_category/add,admin_category/edit,admin_category/view,admin_category/remove,admin_category/reorder,admin_question/default,admin_question/searchquestion,admin_question/searchanswer,admin_question/removequestion,admin_question/removeanswer,admin_question/edit,admin_user/default,admin_user/search,admin_user/add,admin_user/remove,admin_user/edit,admin_usergroup/default,admin_usergroup/add,admin_usergroup/remove,admin_usergroup/edit,admin_note/default,admin_note/add,admin_note/edit,admin_note/remove',
   ),
   3 => 
   array (
@@ -34,7 +34,7 @@ return array (
     'questionlimits' => '0',
     'answerlimits' => '0',
     'credit3limits' => '0',
-    'regulars' => 'user/scorelist,index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,gift/default,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove,admin_main/default,admin_main/header,admin_main/menu,admin_main/stat,admin_main/login,admin_main/logout',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove,admin_main/default,admin_main/header,admin_main/menu,admin_main/stat,admin_main/login,admin_main/logout',
   ),
   6 => 
   array (
@@ -58,7 +58,7 @@ return array (
     'questionlimits' => '3',
     'answerlimits' => '3',
     'credit3limits' => '1',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   8 => 
   array (
@@ -70,7 +70,7 @@ return array (
     'questionlimits' => '5',
     'answerlimits' => '3',
     'credit3limits' => '3',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   9 => 
   array (
@@ -82,7 +82,7 @@ return array (
     'questionlimits' => '5',
     'answerlimits' => '5',
     'credit3limits' => '5',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   10 => 
   array (
@@ -94,7 +94,7 @@ return array (
     'questionlimits' => '6',
     'answerlimits' => '6',
     'credit3limits' => '6',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   11 => 
   array (
@@ -106,7 +106,7 @@ return array (
     'questionlimits' => '7',
     'answerlimits' => '7',
     'credit3limits' => '7',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   12 => 
   array (
@@ -118,7 +118,7 @@ return array (
     'questionlimits' => '8',
     'answerlimits' => '8',
     'credit3limits' => '8',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   13 => 
   array (
@@ -130,7 +130,7 @@ return array (
     'questionlimits' => '9',
     'answerlimits' => '9',
     'credit3limits' => '9',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   14 => 
   array (
@@ -142,7 +142,7 @@ return array (
     'questionlimits' => '10',
     'answerlimits' => '10',
     'credit3limits' => '10',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   15 => 
   array (
@@ -154,7 +154,7 @@ return array (
     'questionlimits' => '11',
     'answerlimits' => '11',
     'credit3limits' => '10',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   16 => 
   array (
@@ -166,7 +166,7 @@ return array (
     'questionlimits' => '12',
     'answerlimits' => '12',
     'credit3limits' => '11',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   17 => 
   array (
@@ -178,7 +178,7 @@ return array (
     'questionlimits' => '13',
     'answerlimits' => '13',
     'credit3limits' => '11',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   18 => 
   array (
@@ -190,7 +190,7 @@ return array (
     'questionlimits' => '14',
     'answerlimits' => '14',
     'credit3limits' => '12',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   19 => 
   array (
@@ -202,7 +202,7 @@ return array (
     'questionlimits' => '14',
     'answerlimits' => '15',
     'credit3limits' => '12',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   20 => 
   array (
@@ -214,7 +214,7 @@ return array (
     'questionlimits' => '14',
     'answerlimits' => '16',
     'credit3limits' => '12',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   21 => 
   array (
@@ -226,7 +226,7 @@ return array (
     'questionlimits' => '15',
     'answerlimits' => '14',
     'credit3limits' => '13',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   22 => 
   array (
@@ -238,7 +238,7 @@ return array (
     'questionlimits' => '16',
     'answerlimits' => '15',
     'credit3limits' => '13',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   23 => 
   array (
@@ -250,7 +250,7 @@ return array (
     'questionlimits' => '18',
     'answerlimits' => '16',
     'credit3limits' => '14',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   24 => 
   array (
@@ -262,7 +262,7 @@ return array (
     'questionlimits' => '20',
     'answerlimits' => '18',
     'credit3limits' => '16',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   25 => 
   array (
@@ -274,7 +274,7 @@ return array (
     'questionlimits' => '24',
     'answerlimits' => '20',
     'credit3limits' => '18',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
   26 => 
   array (
@@ -286,7 +286,7 @@ return array (
     'questionlimits' => '0',
     'answerlimits' => '0',
     'credit3limits' => '0',
-    'regulars' => 'index/tagquestion,question/answercomment,user/exchange,expert/default,index/taglist,user/famouslist,user/favorite,question/addfavorite,user/space_ask,user/space_answer,user/saveimg,user/editimg,category/recommend,user/register,index/default,category/view,category/list,question/view,note/list,note/view,rss/category,rss/list,rss/question,user/space,user/scorelist,question/search,question/add,question/tagask,gift/default,gift/search,gift/add,user/register,user/default,user/score,user/ask,user/answer,user/profile,user/uppass,attach/upload,question/answer,question/adopt,question/govote,question/close,question/supply,question/add,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
+    'regulars' => 'user/register,user/editimg,index/default,category/view,category/list,question/view,category/recommend,note/list,note/view,rss/category,rss/list,rss/question,user/scorelist,expert/default,user/famouslist,index/taglist,gift/default,gift/search,gift/add,question/search,question/add,question/tagask,question/answer,question/answercomment,user/register,user/default,user/score,user/ask,user/answer,user/favorite,question/addfavorite,user/profile,user/uppass,attach/uploadimage,question/adopt,question/close,question/supply,question/addscore,question/editanswer,question/search,message/send,message/new,message/personal,message/system,message/outbox,message/view,message/remove',
   ),
 );
 ?>
