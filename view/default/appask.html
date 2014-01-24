@@ -27,8 +27,8 @@
 </head>
 <body style="overflow:hidden;">
 <div class="content">
-    <div class="left1">
-        <div class="leftc">
+    <div class="left1" style="background:none;border: 0;">
+        <div class="leftc" style="background:none;">
             <div class="askfgx"></div>
             <form name="askform" onsubmit="return check_askform(this);" action="{url api/appask}" method="post" >
             <input type="hidden" value="0" name="cid" />
@@ -40,7 +40,7 @@
                     <div class="clr"></div>
 
                     <div class="shur4">
-                        <script type="text/plain" id="mydescription" name="description" style="width:710px;margin-top:20px;"></script>
+                        <script type="text/plain" id="mydescription" name="description" style="width:710px;height:200px;margin-top:20px;"><span style="line-height: 200px;text-align: center;display:block;">输入问题过后，Ctrl+Enter快速<span></script>
                     </div>
                     <div class="clr"></div>
                     
@@ -51,19 +51,19 @@
             </form>
         </div>
         <div class="clr"></div>
-        <div class="leftb"></div>
     </div>
-    <div class="right1">
+    <div style="position: absolute;top: 23%;left: 68%;font-size: 1px;font-weight: bolder">>></div>
+    <div class="right1" style="border-left:1px solid #666;margin-top:40px;margin-left:10px;width: 213px;">
         <div class="gg">
             <div class="ggtitle">
                 <ul>
-                    <li class="gga1"></li>
-                    <li class="gga2">
-                        <div class="juzhong">
+                    <li class="gga1" style="background:none;"></li>
+                    <li class="gga2" style="background:none;">
+                        <div class="juzhong" style="border-bottom:2px solid #000;height: 34px;">
         					 我的提问
                         </div>
                     </li>
-                    <li class="gga3"></li>
+                    <li class="gga3" style="background:none;"></li>
                 </ul>
             </div>
             <div class="clr"></div>
@@ -80,25 +80,18 @@
                		<!--{/loop}-->
                 </ul>
             </div>
-            <div class="ggbuttom">
-                <ul>
-                    <li class="ggba1"></li>
-                    <li class="ggba2"></li>
-                    <li class="ggba3"></li>
-                </ul>
-            </div>
             <div class="clr"></div>
         </div>
         <div class="gg">
             <div class="ggtitle">
                 <ul>
-                    <li class="gga1"></li>
-                    <li class="gga2">
-                        <div class="juzhong">
+                    <li class="gga1" style="background:none;"></li>
+                    <li class="gga2" style="background:none;">
+                        <div class="juzhong" style="border-bottom:2px solid #000;height: 34px;">
         					 相关提问
                         </div>
                     </li>
-                    <li class="gga3"></li>
+                    <li class="gga3" style="background:none;"></li>
                 </ul>
             </div>
             <div class="clr"></div>

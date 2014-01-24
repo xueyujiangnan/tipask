@@ -99,29 +99,30 @@ class apicontrol extends base {
 //                 $this->message("问题发布成功!", $viewurl);
 //             }
         } else {
-//         	$token = $this->get['token'];
-//         	if(!$token){
-//         		ajax(0,"token不能为空");
-//         		exit();
-//         	}
-//         	$userInfo = inituser($token);
-//         	if(!$userInfo){
-//         		ajax(0,"token错误！");
-//         	}else{
-//         		//若是手机号码注册，则自动生成一个不可用邮箱，若是用s邮箱注册则$email就为改用户名
-//         		$email = $userInfo["acc_nbr"]."@3q.com";
-//         		//判断是否有这个用户，若是没有就创建，若是有就登陆
-//         		$user = $_ENV['user']->get_by_username($userInfo['acc_nbr']);
-//         		if (!$user) {
-//         			$uid = $_ENV['user']->add($userInfo["acc_nbr"], "123456", $email);
-//         			$user = $_ENV['user']->get_by_username($userInfo["acc_nbr"]);
-//         		}
-//         		//登陆
-//         		$_ENV['user']->refresh($user['uid'], 1, intval(3600));
-// //         		$data["user"] =$user;
-// //         		$data["3q_user"] = $userInfo;
-// //         		ajax(1,"登陆成功",$data);//返回登陆用户的3q信息和问答系统账户信息
-//         	}
+        	$token = $this->get['token'];
+        	if(!$token){
+        		echo "token 不能为空";
+        		exit();
+        	}
+        	$userInfo = inituser($token);
+        	if(!$userInfo){
+        		echo "token错误";
+            	exit();
+        	}else{
+        		//若是手机号码注册，则自动生成一个不可用邮箱，若是用s邮箱注册则$email就为改用户名
+        		$email = $userInfo["acc_nbr"]."@3q.com";
+        		//判断是否有这个用户，若是没有就创建，若是有就登陆
+        		$user = $_ENV['user']->get_by_username($userInfo['acc_nbr']);
+        		if (!$user) {
+        			$uid = $_ENV['user']->add($userInfo["acc_nbr"], "123456", $email);
+        			$user = $_ENV['user']->get_by_username($userInfo["acc_nbr"]);
+        		}
+        		//登陆
+        		$_ENV['user']->refresh($user['uid'], 1, intval(3600));
+//         		$data["user"] =$user;
+//         		$data["3q_user"] = $userInfo;
+//         		ajax(1,"登陆成功",$data);//返回登陆用户的3q信息和问答系统账户信息
+        	}
         	
         	$category_js = $_ENV['category']->get_js();
         	$questionlist = $_ENV['question']->list_by_uid($this->user['uid'], "all", 0, 6,'status','Asc');
